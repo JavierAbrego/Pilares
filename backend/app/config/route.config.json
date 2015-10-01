@@ -1,0 +1,50 @@
+{
+  "routes": [
+    {
+      "route": "/v1/event/add",
+      "method": "POST",
+      "controller": "../controllers/v1/event/event-controller",
+      "action": "add"
+    },
+    {
+      "route": "/v1/event/remove",
+      "method": "POST",
+      "controller": "../controllers/v1/event/event-controller",
+      "action": "remove"
+    },
+    {
+      "route": "/v1/auth",
+      "method": "POST",
+      "controller": "../controllers/v1/auth/auth-controller",
+      "action": "addAuthentication"
+    },
+    {
+      "route": "/v1/friend",
+      "method": "POST",
+      "controller": "../controllers/v1/friend/friend-controller"
+    },
+    {
+      "route": "/v1/comment/add",
+      "method": "POST",
+      "controller": "../controllers/v1/comment/comment-controller",
+      "action": "add"
+    },
+    {
+      "route": "/v1/comment/get",
+      "method": "POST",
+      "controller": "../controllers/v1/comment/comment-controller",
+      "action": "get"
+    },
+    {
+      "route": "/v1/timeline",
+      "method": "POST",
+      "controller": "../controllers/v1/timeline/timeline-controller"
+    },
+    {
+      "route": "/v1/timeline/fav",
+      "method": "POST",
+      "controller": "../controllers/v1/timeline/timeline-controller",
+      "action" : "favEvents"
+    }
+  ]
+}

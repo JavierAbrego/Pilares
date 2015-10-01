@@ -1,0 +1,6 @@
+{
+  "settings": [
+    { "name": "queueLength", "value": 10 },
+    { "db" : " mongodb://user:pass@host:55762/db" }
+  ]
+}
