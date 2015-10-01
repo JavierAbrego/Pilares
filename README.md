@@ -6,9 +6,9 @@ Muestra el programa de fiestas de Zaragoza en lugares como Valdespartera Interpe
 
 Enlaces de aplicación en el market:
 
-Android: https://itunes.apple.com/us/app/pilares-2015-fiestas-del-pilar/id924264083?ls=1&mt=8
+iOS: https://itunes.apple.com/us/app/pilares-2015-fiestas-del-pilar/id924264083?ls=1&mt=8
 
-iOS: https://play.google.com/store/apps/details?id=gs.bigdata.pilares
+Android: https://play.google.com/store/apps/details?id=gs.bigdata.pilares
 
 Extensión de navegador chrome: https://chrome.google.com/webstore/detail/pilares-2015-fiestas-del/floagoddabgjpbbfdjahgmmjdegccmim?hl=es
 
