@@ -1,0 +1,49 @@
+.item-thumbnail-left{
+    width:100%!important;
+}
+
+.marker_labels{
+    background: white;
+    width:200px;
+    height:20px;
+    padding:0px;
+    border:1px solid red;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.margin--6{
+    margin-top: -6px;
+}
+
+.titulo_fecha{
+    font-size: large;
+}
+
+.width100{
+    width:100%!important;
+}
+
+
+.cachirulo2{
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #555), color-stop(.25, transparent), to(transparent)), -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #555), color-stop(.25, transparent), to(transparent)), -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #555)), -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #555)) !important;
+  background-image: -webkit-linear-gradient(45deg, #555 25%, transparent 25%, transparent), -webkit-linear-gradient(-45deg, #555 25%, transparent 25%, transparent), -webkit-linear-gradient(45deg, transparent 75%, #555 75%), -webkit-linear-gradient(-45deg, transparent 75%, #555 75%)!important;
+  background-image: -moz-linear-gradient(45deg, #555 25%, transparent 25%, transparent), -moz-linear-gradient(-45deg, #555 25%, transparent 25%, transparent), -moz-linear-gradient(45deg, transparent 75%, #555 75%), -moz-linear-gradient(-45deg, transparent 75%, #555 75%)!important;
+  background-image: -ms-linear-gradient(45deg, #555 25%, transparent 25%, transparent), -ms-linear-gradient(-45deg, #555 25%, transparent 25%, transparent), -ms-linear-gradient(45deg, transparent 75%, #555 75%), -ms-linear-gradient(-45deg, transparent 75%, #555 75%)!important;
+  background-image: -o-linear-gradient(45deg, #555 25%, transparent 25%, transparent), -o-linear-gradient(-45deg, #555 25%, transparent 25%, transparent), -o-linear-gradient(45deg, transparent 75%, #555 75%), -o-linear-gradient(-45deg, transparent 75%, #555 75%)!important;
+  background-image: linear-gradient(45deg, #555 25%, transparent 25%, transparent), linear-gradient(-45deg, #555 25%, transparent 25%, transparent), linear-gradient(45deg, transparent 75%, #555 75%), linear-gradient(-45deg, transparent 75%, #555 75%)!important;
+}
+.cachirulo3{
+  background-color: #e42012 !important;
+  background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, #ffffff),
+  linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black) !important;
+  background-size:60px 60px !important;
+  background-position:0 0, 30px 30px !important;
+}

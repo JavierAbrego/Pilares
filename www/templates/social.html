@@ -1,0 +1,39 @@
+<ion-view view-title="Social">
+  <ion-content>
+    <div class="card" ng-show="sessionExpired">
+      <div class="item item-text-wrap">
+        La sesión a caducado, vuelve a iniciar sesión.
+      </div>
+    </div>
+    <div class="card" ng-show="!loggedWithFB">
+      <div class="item item-text-wrap">
+        Al iniciar sesión con facebook, podrás sincronizar tus eventos favoritos con todos tus dispoitivos, ver los eventos a los que van tus amigos y agregar comentarios en los eventos que tu quieras.
+      </div>
+    </div>
+    <label class="item" ng-show="!loggedWithFB">
+      <button class="button button-block button-positive" ng-click="fbLogin()">
+        Iniciar sesión con Facebook
+      </button>
+    </label>
+    <label class="item" ng-show="loggedWithFB">
+      Descubre el plan de tus amigos
+      </label>
+    <ion-refresher
+      pulling-text="Continua para actualizar..."
+      on-refresh="getTimeline()">
+    </ion-refresher>
+    <div class="card" ng-show="(timeline.length==0) && loggedWithFB">
+      <div class="item item-text-wrap">
+        Todavía no hay actividad de tus amigos, accede a la guía de eventos y se el primero en agregar un evento a favoritos.
+      </div>
+    </div>
+    <div class="list card" collection-repeat="line in timeline">
+      <div class="item item-avatar" ng-click="goToEvent(line.eventData.event)">
+        <img ng-src="http://graph.facebook.com/{{line.event.userId}}/picture?type=square">
+        <h2>{{stripHTML(line.eventData.event.title)}}</h2>
+        <p>A {{line.userName}} le ha gustado </p>
+        <p>{{getDateFromJSON(line.event.timestamp)}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-view view-title="Mapa de eventos">
+  <div  style="display:fixed; top:43px;" class="bar bar-header bar-stable">
+    <div class="col col-20" ng-click="previousDay()"><i  style="margin-left:10%;" class="icon ion-chevron-left col"></i></div>
+    <div class="col col-55 titulo_fecha" style="text-align: center;"> {{dayName}} {{day}}/{{month}}/{{year}}</div>
+    <div class="col col-20" ng-click="nextDay()"><i   style="float:right; margin-right:10%;" class="icon ion-chevron-right"></i></div>
+  </div>
+  <ion-content style="width: 100%;">
+    <div  class="bar bar-header bar-light">
+    </div>
+    <div class="bar bar-subheader" style="width: 100%; padding:0px;">
+      <ui-gmap-google-map center='map.center' zoom='map.zoom' data-tap-disabled="true">
+        <ui-gmap-markers models="map.dynamicMarkers" coords="'self'"  events="markersEvents" options="'options'">
+        </ui-gmap-markers>
+
+      </ui-gmap-google-map>
+
+    </div>
+
+  </ion-content>
+
+  <div class="tabs-striped tabs-color-assertive tabs-icon-left">
+    <div class="tabs">
+      <a class="tab-item " ng-href="#/app/events">
+        <i class="icon ion-ios-list-outline"></i>
+        Lista
+      </a>
+      <a class="tab-item active" >
+        <i class="icon ion-location"></i>
+        Mapa
+      </a>
+    </div>
+  </div>
+</ion-view>

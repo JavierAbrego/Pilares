@@ -1,0 +1,20 @@
+<ion-view view-title="Favoritos">
+    <ion-content style="width: 100%;" overflow-scroll="true">
+        <div  class="">
+        </div>
+        <div class="" style="width: 100%;">
+            <div ng-if="events.length==0" class="card">
+                <div class="item item-text-wrap">
+                    No hay eventos guardados.
+                </div>
+            </div>
+            <ion-item  ng-click="goToEvent(event)" collection-repeat="event in events" class="item-thumbnail-left " style="width: 100%;">
+
+                <img ng-if="!imageIsDefined(event.image)" ng-src="http://www.zaragoza.es/cont/paginas/actividades/{{event.temas[0].image}}" err-src="{{errorPhoto}}"/>
+                <img ng-if="imageIsDefined(event.image)" ng-src="http:{{event.image}}" err-src="{{errorPhoto}}"/>
+                {{ getDateFromJSON(event.startDate) }} - {{ getHorario(event) }}<br>{{stripHTML(event.title) }}<br>{{event.temas[0].title}}<span class="subdued">{{getLugar(event)}}</span><br>{{stripHTML(event.precioEntrada)}}
+            </ion-item>
+        </div>
+        <br><br><br><br><br>
+    </ion-content>
+</ion-view>

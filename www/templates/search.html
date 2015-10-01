@@ -1,0 +1,33 @@
+<ion-view view-title="Buscar">
+  <ion-content overflow-scroll="true">
+    <div class="list list-inset">
+    <div class="row">
+      <div clas="col col-50">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Buscar" ng-model="query" ><!--ng-keypress="searchEvents(query)"-->
+          </label>
+        </div>
+
+      <div class="col col-50 margin--6">
+        <button class="button button-stable" ng-click="searchEvents(query)">
+          Buscar
+        </button>
+      </div>
+    </div>
+
+    </div>
+
+    <div ng-if="noResults" class="card">
+      <div class="item item-text-wrap">
+        No se han encontrado eventos para el término {{query}}.
+      </div>
+    </div>
+    <ion-item  ng-click="goToEvent(event)" collection-repeat="event in events" class="item-thumbnail-left " style="width: 100%;">
+
+      <img ng-if="!imageIsDefined(event.image)" ng-src="http://www.zaragoza.es/cont/paginas/actividades/{{event.temas[0].image}}" err-src="{{errorPhoto}}"/>
+      <img ng-if="imageIsDefined(event.image)" ng-src="http:{{event.image}}" err-src="{{errorPhoto}}"/>
+      {{ getDateFromJSON(event.startDate) }} - {{ stripHTML(getHorario(event)) }}<br>{{stripHTML(event.title) }}<br>{{event.temas[0].title}}<span class="subdued">{{getLugar(event)}}</span><br>{{stripHTML(event.precioEntrada)}}
+    </ion-item>
+  </ion-content>
+</ion-view>

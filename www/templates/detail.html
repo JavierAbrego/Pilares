@@ -1,0 +1,79 @@
+<ion-view view-title="Evento">
+  <ion-content>
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img ng-if="!imageIsDefined(event.image)" class="full-image" ng-src="http://www.zaragoza.es/cont/paginas/actividades/{{event.temas[0].image}}" err-src="{{errorPhoto}}"/>
+        <img ng-if="imageIsDefined(event.image)" class="full-image" ng-src="http:{{event.image}}" err-src="{{errorPhoto}}"/>
+        <h2>{{ stripHTML(event.title)}}</h2>
+        <p>{{ getHorario(event) }}</p>
+        <p class="subdued">{{event.subEvent[0].lugar.title}}</p>
+      </div>
+
+      <div class="item item-body">
+        <p>
+          {{ stripHTML(event.title)}}<br><br>
+          {{stripHTML(event.description)}}
+        </p>
+
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a ng-if="!isFavEvent" class="tab-item"  ng-click="addFav();">
+          <i class="icon ion-ios-heart-outline"></i>
+          Agregar a favoritos
+        </a>
+        <a ng-if="isFavEvent" class="tab-item" ng-click="removeFav();">
+          <i class="icon ion-ios-heart"></i>
+          Eliminar de favoritos
+        </a>
+        <a class="tab-item" href="#/app/directions">
+          <i class="icon ion-location"></i>
+          Como llegar
+        </a>
+        <a class="tab-item" ng-click="share()">
+          <i class="icon ion-share"></i>
+          Compartir
+        </a>
+      </div>
+
+    </div>
+    <!--Comments-->
+    <div class="list" ng-show="loggedWithFB">
+      <div class="item item-avatar" >
+        <img ng-src="http://graph.facebook.com/{{fbUser.id}}/picture?type=square">
+        <ion-spinner ng-show="addingComment" icon="lines"></ion-spinner>
+        <label ng-show="!addingComment" class="item item-avatar item-input item-floating-label">
+          <span class="input-label">Comentario</span>
+          <input type="text" placeholder="Agrega tu comentario..." ng-model="$parent.comment">
+        </label>
+      </div>
+      <a class="button icon-right ion-chevron-right  button-small button-full button-outline" ng-click="addComment(comment);">Enviar</a>
+    </div>
+    <div class="card">
+
+      <div ng-show="!gettingComments" class="item item-text-wrap">
+        Hay {{comments.length}} comentarios.
+      </div>
+      <div ng-show="gettingComments" class="item item-text-wrap">
+        <ion-spinner  icon="lines"></ion-spinner>Obteniendo comentarios
+      </div>
+
+    </div>
+    <div class="text-center" ng-show="!loggedWithFB">
+      <button  class="button button-light" onclick="window.location='#/app/social'">
+        Inicia sesión para poder comentar
+      </button>
+    </div>
+    <br>
+
+    <div class="list">
+      <a class="item item-avatar" collection-repeat="comment in comments" href="javascript:void(0);">
+        <img ng-src="http://graph.facebook.com/{{comment.userId}}/picture?type=square">
+        <h2>{{comment.userName}}</h2>
+        <p>{{comment.comment}}</p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

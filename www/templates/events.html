@@ -1,0 +1,40 @@
+<ion-view view-title="Eventos">
+    <div  style="display:fixed; top:43px;" class="bar bar-header bar-stable">
+        <div class="col col-20" ng-click="previousDay()"><i  style="margin-left:10%;" class="icon ion-chevron-left col"></i></div>
+        <div class="col col-55 titulo_fecha" style="text-align: center;"> {{dayName}} {{day}}/{{month}}/{{year}}</div>
+        <div class="col col-20" ng-click="nextDay()"><i   style="float:right; margin-right:10%;" class="icon ion-chevron-right"></i></div>
+    </div>
+  <ion-content style="width: 100%;" overflow-scroll="true">
+      <div  class="bar bar-header bar-light">
+      </div>
+      <div class="bar bar-subheader" style="width: 100%;">
+    <ion-refresher
+            pulling-text="Continua para actualizar..."
+            on-refresh="getEvents()">
+    </ion-refresher>
+    <ion-item  ng-click="goToEvent(event)" collection-repeat="event in events" class="item-thumbnail-left " style="width: 100%;">
+
+        <img ng-if="!imageIsDefined(event.image)" ng-src="http://www.zaragoza.es/cont/paginas/actividades/{{event.temas[0].image}}" err-src="{{errorPhoto}}"/>
+        <img ng-if="imageIsDefined(event.image)" ng-src="http:{{event.image}}" err-src="{{errorPhoto}}"/>
+        {{ stripHTML(getHorario(event)) }}<br>{{ stripHTML(event.title)}}<br>{{event.temas[0].title}}<span class="subdued">{{getLugar(event)}}</span><br>{{stripHTML(event.precioEntrada)}}
+    </ion-item>
+      </div>
+    <br><br><br><br><br>
+  </ion-content>
+    <!--<ion-tabs class="tabs-assertive tabs-icon-only">-->
+        <!--<ion-tab title="Lista" icon-on="ion-document-text" icon-off="ion-document-text"></ion-tab>-->
+        <!--<ion-tab ng-href="/app/eventsMap" title="Mapa" icon-on="ion-location" icon-off="ion-ios-location-outline"></ion-tab>-->
+    <!--</ion-tabs>-->
+    <div class="tabs-striped tabs-color-assertive tabs-icon-left">
+        <div class="tabs">
+            <a class="tab-item active" href="#">
+                <i class="icon ion-ios-list-outline"></i>
+                Lista
+            </a>
+            <a class="tab-item" ng-href="#/app/eventsMap">
+                <i class="icon ion-location"></i>
+                Mapa
+            </a>
+        </div>
+    </div>
+</ion-view>
